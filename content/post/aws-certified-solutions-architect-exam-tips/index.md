@@ -12,7 +12,8 @@ image:
   preview_only: false
 ---
 Here are some of my tips to pass the AWS Certified Solutions Architect Exam.
-a. Take detailed notes using an app like [Typora](https://typora.io/). 
+a. Take detailed notes using an app like [Typora](https://typora.io/). \
+
 b. Deep dive into topics like
 
 * VPC: Understand the differences between using a VPN and Direct Connect.
