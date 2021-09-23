@@ -3,6 +3,9 @@ title: "C#: How to Use Dispose and Finalize"
 date: 2021-09-23T03:02:49.247Z
 draft: false
 featured: false
+tags:
+  - c#
+  - .Net
 image:
   filename: featured
   focal_point: Smart
