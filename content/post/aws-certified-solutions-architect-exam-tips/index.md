@@ -21,3 +21,5 @@ b. Deep dive into topics like
 * RDS: Multi-AZ Replication, Read Replicas, Understand snapshots
 * KINESIS:  Kinesis: Streams vs. Firehose vs. Analytics, Kinesis vs. Redshift vs. EMR, Athena’s differences from Kinesis
 * LAMBDA: Limits/timeouts, Events and what services are generally used with Lambda triggers
+
+c. Purchase the practice tests from [TutorialsDojo](https://portal.tutorialsdojo.com/courses/aws-certified-solutions-architect-associate-practice-exams/) and work through them.
