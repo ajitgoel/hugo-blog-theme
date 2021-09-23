@@ -1,6 +1,7 @@
 ---
 title: Ajit Kumar Goel
 role: ".Net Core, AWS, Vue.Js, "
+avatar_filename: images.jpg
 bio: My research interests include .Net Core, AWS, Vuejs.
 social:
   - icon: envelope
@@ -8,10 +9,10 @@ social:
     link: about/#contact
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/wowchemy
+    link: https://twitter.com/goelajit
   - icon: instagram
     icon_pack: fab
-    link: https://instagram.com/geocushen
+    link: https://instagram.com/ajitgoel
 organizations:
   - name: Stanford University
     url: ""
