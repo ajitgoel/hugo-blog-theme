@@ -14,7 +14,7 @@ social:
     icon_pack: fab
     link: https://instagram.com/ajitgoel
 organizations:
-  - name: Stanford University
+  - name: J P Morgan Chase
     url: ""
 superuser: true
 ---
