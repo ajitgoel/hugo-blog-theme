@@ -1,7 +1,7 @@
 ---
 title: AWS Certified Solutions Architect Exam Tips
 date: 2021-09-23T13:39:57.776Z
-draft: true
+draft: false
 featured: false
 tags:
   - AWS
