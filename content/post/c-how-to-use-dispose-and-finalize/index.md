@@ -4,15 +4,13 @@ date: 2021-09-23T03:02:49.247Z
 draft: false
 featured: false
 tags:
-  - c#
+  - C#
   - .Net
 image:
   filename: ""
   focal_point: Smart
   preview_only: false
 ---
-
-
 ```
 public interface IDisposable
 {
@@ -38,17 +36,14 @@ public class Test : IDisposable
 			{
 				if (disposing)
 				{
-					// Code to dispose the managed resources held by the class
+				//Code to dispose the managed resources held by the class
 				}
-				// Code to dispose the un-managed resources held by the class like a database connection instance
+				//Code to dispose the un-managed resources held by the class like a database connection instance
 				isDisposed = true;
 				base.Dispose(disposing);
 			}
 		}
-		catch(Exception exception)
-		{
-			
-		}
+		catch(Exception exception){}
 	}
 	//client application should call the Dispose method explicitly to 
 	//free any unmanaged resources for which the object may be holding references or 
