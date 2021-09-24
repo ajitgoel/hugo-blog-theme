@@ -1,6 +1,6 @@
 ---
 title: Ajit Kumar Goel
-role: ".Net Core, AWS, Vue.Js, "
+role: .Net Core, AWS, Vuejs
 avatar_filename: images.jpg
 bio: My interests include .Net Core, AWS, Vuejs.
 social:
