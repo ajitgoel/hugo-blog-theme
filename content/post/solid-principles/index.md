@@ -173,7 +173,7 @@ public class Manager
 }
 ```
 
-**e. Dependency Inversion Principle** *Dependency Inversion Principle states that*
+**e. Dependency Inversion Principle** states that
 
 1. High-level modules(`Manager`class) should not depend on low-level modules(`Worker`, `SuperWorker`classes). Both(`Manager, Worker, SuperWorker` classes) should depend on abstractions(`IWorker`).
 2. Abstractions should not depend on details. Details should depend on abstractions.
