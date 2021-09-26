@@ -11,7 +11,8 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-Here are some of my tips to pass the AWS Certified Solutions Architect Exam.
+Here are some of my tips to pass the AWS Certified Solutions Architect Exam.\
+
 a. I used [Stephane Maarek's course](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c02/) to study for my exam. As a alternative to that, [Brian Cantrill course](https://learn.cantrill.io/p/aws-certified-solutions-architect-associate-saa-c02) is also very highly recommended on various AWS certification forums. \
 \
 b. Take detailed notes using an app like [Typora](https://typora.io/).
