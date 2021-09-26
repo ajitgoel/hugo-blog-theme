@@ -3,6 +3,9 @@ title: Adapter Pattern with a twist
 date: 2021-09-26T20:21:20.571Z
 draft: false
 featured: false
+categories:
+  - C#
+  - Design-Patterns
 image:
   filename: ""
   focal_point: Smart
