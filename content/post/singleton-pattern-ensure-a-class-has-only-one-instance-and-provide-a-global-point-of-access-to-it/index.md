@@ -14,7 +14,13 @@ image:
 ---
 **Singleton Pattern:** Ensure a class has only one instance and provide a global point of access to it.
 
-**Solution:** The code below uses Double-checked locking. See [here](http://en.wikipedia.org/wiki/Double-checked_locking) for an explanation of double checked locking. **Update(06/29/2016):** Jon Skeet’s article [here](http://csharpindepth.com/Articles/General/Singleton.aspx), does not recommend implementing singleton pattern using Solution 1 below. He instead recommend’s using .NET 4’s Lazy type, to implement a singleton pattern. The Lazy class internally uses double-checked locking by default to store either the exception that was thrown during construction, or the result of the function that was passed to Lazy. I have implemented the same in Solution 2 below.
+**Solution:** 
+
+The code below uses Double-checked locking. See [here](http://en.wikipedia.org/wiki/Double-checked_locking) for an explanation of double checked locking. 
+
+**Update(06/29/2016):** 
+
+Jon Skeet’s article [here](http://csharpindepth.com/Articles/General/Singleton.aspx), does not recommend implementing singleton pattern using Solution 1 below. He instead recommend’s using .NET 4’s Lazy type, to implement a singleton pattern. The Lazy class internally uses double-checked locking by default to store either the exception that was thrown during construction, or the result of the function that was passed to Lazy. I have implemented the same in Solution 2 below.
 
 **Solution 1(Not recommended):**
 
