@@ -23,7 +23,9 @@ public void ConfigureServices(IServiceCollection services)
     options.UseSqlServer(Configuration.GetConnectionString("OrdersDatabase"),
       sqlServerOptionsAction: sqlOptions =>
       {
-        sqlOptions.ExecutionStrategy(x => new CustomExecutionStrategy(x));
+        sqlOptions.ExecutionStrategy(x => 
+          new CustomExecutionStrategy(x, 10, TimeSpan.FromSeconds(10)));
+        sqlOptions.CommandTimeout(_conninfo.ConmandTimeoutInSeconds);
       });
     });
 }
