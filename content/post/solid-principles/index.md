@@ -114,7 +114,7 @@ public class OracleConnectionManager : IConnectionManager
 
 **d. Interface Segregation Principle** states that clients should not be forced to implement interfaces they don’t use.
 
-**Existing Design** Let’s assume we have to implement a new Robot class in this design. **`Robots`** will need to implement the **`IWorker`** interface because robots works. On the other side, they don’t have to implement it because they don’t eat. If we keep the present design, the new `Robot`class is forced to implement the `eat`method.
+**Existing Design** Let’s assume we have to implement a new Robot class in this design. **`Robots`** will need to implement the **`IWorker`** interface because robots works. On the other side, they don’t have to implement it because they don’t eat. If we keep the present design, the new `Robot`class is forced to implement the `eat `method.
 
 ```
 public interface IWorker 
@@ -138,7 +138,7 @@ public class Manager
 }
 ```
 
-**Interface Segregation Principle implemented in current design:** Following code supports the Interface Segregation Principle. By splitting the `IWorker`interface in `IFeedable`, `IWorkable`interfaces the new `Robot`class is no longer forced to implement the `eat` method.
+**Refactored code to follow Interface Segregation Principle:** By splitting the `IWorker`interface in `IFeedable`, `IWorkable`interfaces the new `Robot`class is no longer forced to implement the `Eat` method.
 
 ```
 public interface IWorker : IFeedable, IWorkable{}
@@ -203,9 +203,7 @@ public class Manager
 }
 ```
 
-**Dependency Inversion Principle implemented in current design**
-
-Following code supports the Dependency Inversion Principle. In this new design a new `IWorker`Interface has been added. Now the `Manager`class doesn't require changes when `SuperWorkers`are added since the work has been delegated to the `SuperWorker`class. It also reduces risk since no other parts of the system need to be tested.
+**Refactored code to follow Dependency Inversion Principle:** In this new design a new `IWorker`Interface has been added. Now the `Manager`class doesn't require changes when `SuperWorkers`are added since the work has been delegated to the `SuperWorker`class. It also reduces risk since no other parts of the system need to be tested.
 
 ```
 public interface IWorker 
@@ -233,5 +231,3 @@ public class Manager
   }
 }
 ```
-
-<!--EndFragment-->
