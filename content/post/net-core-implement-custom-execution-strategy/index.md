@@ -1,5 +1,5 @@
 ---
-title: ".Net Core: Implement custom execution strategy"
+title: "Entity framework core: Implement custom execution strategy"
 date: 2021-09-24T04:58:27.528Z
 draft: false
 featured: false
@@ -23,7 +23,7 @@ public void ConfigureServices(IServiceCollection services)
     options.UseSqlServer(Configuration.GetConnectionString("OrdersDatabase"),
       sqlServerOptionsAction: sqlOptions =>
       {
-        sqlOptions.ExecutionStrategy(x => new OrdersCustomExecutionStrategy(x));
+        sqlOptions.ExecutionStrategy(x => new CustomExecutionStrategy(x));
       });
     });
 }
@@ -32,21 +32,28 @@ public void ConfigureServices(IServiceCollection services)
 The custom strategy class was derived using **ExecutionStrategy** class**.**
 
 ```
-public class OrdersCustomExecutionStrategy : ExecutionStrategy
+///<summary>
+/// The purpose of this class is to wrap the Executionstrategy for the purpose of detecting an exception, primarily for rotating passwords, where the password has expired/changed since the last use
+///</summary>
+public class CustomExecutionStrategy : ExecutionStrategy
 {
-      public OrdersCustomExecutionStrategy(DbContext context) : base(context, ExecutionStrategy.DefaultMaxRetryCount, ExecutionStrategy.DefaultMaxDelay)
-      { 
-      } 
-      public OrdersCustomExecutionStrategy(ExecutionStrategyDependencies dependencies) : base(dependencies, ExecutionStrategy.DefaultMaxRetryCount, ExecutionStrategy.DefaultMaxDelay)
-      { 
-      } 
-      public OrdersCustomExecutionStrategy(DbContext context, int maxRetryCount, TimeSpan maxRetryDelay) :
-          base(context, maxRetryCount, maxRetryDelay)
-      { 
-      } 
-      protected override bool ShouldRetryOn(Exception exception)
-      {
-          //Add code here to retry creating the connection if there is a database exception
-      }
+    private readonly ExecutionstrategyDependencies executionStrategyDependencies;
+	public CustomExecutionStrategy(ExecutionStrategyDependencies executionStrategyDependencies, int maxRetryCount, Timespan maxRetryDelay) : 
+		base(executionStrategyDependencies, maxRetryCount, maxRetryDelay)
+	{
+		executionStrategyDependencies = executionStrategyDependencies;
+	}
+	protected override bool shouldRetryon(Exception exception)
+	{
+		bool retry = false;
+		//If we get a specific sqLexception, then we're going to assume it is due to the password expiring, so we'll attempt to reset the connection string, forcing the secrets container to refresh its password
+		if(exception.GetType() == typeof (Microsoft.Data.SqlClient.Sqlexception))
+		{
+			//get the new connection string from the third party library into connectionstring variable
+			executionStrategyDependencies.currentContext.Context.Database.SetConnectionstring(connectionstring);
+			retry=true;
+		}
+		return retry;
+	}
   }
 ```
