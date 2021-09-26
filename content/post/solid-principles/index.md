@@ -70,25 +70,25 @@ b. if the client application likes to change the way its getting or sending data
 ```
 public class DatabaseRepository
 {
-   //This method violates Liskov Substitution Principle since it consumes an object 
-   //of a base type but internally uses the base type's subclass. 
-   //According to Liskov Substitution Principle, it should not know it is using 
-   //base class or its subtypes. 
-    public bool TestConnection(IConnectionManager connMngr)
+  //This method violates Liskov Substitution Principle since it consumes an object 
+  //of a base type but internally uses the base type's subclass. 
+  //According to Liskov Substitution Principle, it should not know it is using 
+  //base class or its subtypes. 
+  public bool TestConnection(IConnectionManager connMngr)
+  {
+    if (connMngr is SqlServerConnectionManager)
     {
-        if (connMngr is SqlServerConnectionManager)
-        {
-            // Do something...
-        }
-        else if (connMngr is OracleConnectionManager)
-        {
-            // Do something else...
-        }
-        else
-        {
-            // ...
-        }
+      // Do something...
     }
+    else if (connMngr is OracleConnectionManager)
+    {
+      // Do something else...
+    }
+    else
+    {
+      // ...
+    }
+  }
 }
 ```
 
