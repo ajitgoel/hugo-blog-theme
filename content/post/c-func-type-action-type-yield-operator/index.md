@@ -36,9 +36,7 @@ public class UnitTest1
 
 `Action<int> action1 = (int counter) => Console.WriteLine("Write {0}", counter);`
 
-**Yield keyword:**
-
-The use of the yield keyword controls the iterator’s behavior. If the consumer requests an iterator to produce a value, it runs until a yield statement is encountered. At that point, the iterator is suspended until the consumer asks for the next value.
+The **yield** keyword controls the iterator’s behavior. If the consumer requests an iterator to produce a value, it runs until a yield statement is encountered. At that point, the iterator is suspended until the consumer asks for the next value.
 
 ```
 [TestClass]
