@@ -13,7 +13,7 @@ image:
 ---
 **SOLID** is a term describing a collection of design principles for good code. 
 
-***SOLID*** means: 
+**SOLID** means: 
 
 *a*. Single Responsibility Principle 
 
