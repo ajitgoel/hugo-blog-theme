@@ -1,5 +1,5 @@
 ---
-title: "c#: Func type, Action type,yield operator."
+title: "c#: Func type, Action type, yield operator."
 date: 2021-09-26T18:17:07.836Z
 draft: false
 featured: false
