@@ -23,18 +23,22 @@ image:
    If we use the first option, then the caller has no way of awaiting it. 
 5. Make sure that the application is thread safe. eg: Instead of:
 
-   `public async Task ProcessUserAsync(Guid id, List<User> users)
-   {
-       var user = await userRepository.GetAsync(id);
-       users.Add(user);
-   }`
+   ```
+   1. public async Task ProcessUserAsync(Guid id, List<User> users)
+      {
+          var user = await userRepository.GetAsync(id);
+          users.Add(user);
+      }
+   ```
 
    Do
 
-   `public async Task<User> ProcessUserAsync(Guid id)
-   {
-       var user = await userRepository.GetAsync(id);
-       return user;
-   }`
+   ```
+   1. public async Task<User> ProcessUserAsync(Guid id)
+      {
+          var user = await userRepository.GetAsync(id);
+          return user;
+      }
+   ```
 
    In the first option, the users list can be modified by multiple threads at the same time.
