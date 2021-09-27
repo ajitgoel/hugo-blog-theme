@@ -21,38 +21,38 @@ c. makes the algorithms interchangeable within that family.
 
 ```
 using System.Collections.Generic;
-
 class StrategyDesignPatternClient
 {
-    static void Main()
-    {
-        var sortedList = new SortedList();
-        sortedList.Add("name 1");
-        sortedList.Add("name 2");
-        sortedList.Add("name 3");
-        The client passes the "sort strategy" to the SortedList 
-        //so the SortedList can use that passed strategy to sort the internal list
-        sortedList.SetSortStrategy(new QuickSort());
-        sortedList.Sort();
-    }
+  static void Main()
+  {
+    var sortedList = new SortedList();
+    sortedList.Add("name 1");
+    sortedList.Add("name 2");
+    sortedList.Add("name 3");
+    //The client passes the "sort strategy" to the SortedList 
+    //so the SortedList can use that passed strategy to sort 
+    //the internal list
+    sortedList.SetSortStrategy(new QuickSort());
+    sortedList.Sort();
+  }
 }
 public class SortedList
 {
-    private List<string> list = new List<string>();
-    private SortStrategy sortstrategy;
-    public void SetSortStrategy(SortStrategy sortstrategy)
-    {
-        this.sortstrategy = sortstrategy;
-    }
-    public void Add(string name)
-    {
-        list.Add(name);
-    }
-    public void Sort()
-    {
-        //Ask the "SortStrategy" class to sort the list. 
-        sortstrategy.Sort(list);
-    }
+  private List<string> list = new List<string>();
+  private SortStrategy sortstrategy;
+  public void SetSortStrategy(SortStrategy sortstrategy)
+  {
+    this.sortstrategy = sortstrategy;
+  }
+  public void Add(string name)
+  {
+    list.Add(name);
+  }
+  public void Sort()
+  {
+    //Ask the "SortStrategy" class to sort the list. 
+    sortstrategy.Sort(list);
+  }
 }
 public interface ISortStrategy
 {
