@@ -16,42 +16,48 @@ We can use the following code block to ensure that a class implements the IDispo
 ```
 public class Test : IDisposable
 {
-	private bool isDisposed = false;
-    //Finalization is process by which the Garbage controller allows objects 
-    //to clean up any unmanaged resources that they're holding, before actually destroying the instance. 
-    //.Net framework translates the explicit destructor to create a call to Finalize(see  Listing 2)
-    //It allows the system run cleanup code during the finalize operation. 
-	~Test()
-	{
-		Dispose(false);
-	}
-	protected void Dispose(bool disposing)
-	{
-		//wrap the dispose method in try-catch to ensure that the memory is always reclaimed in case of an exception.
-		try
-		{		
-			if(!isDisposed)
-			{
-				if (disposing)
-				{
-				//Code to dispose the managed resources held by the class
-				}
-				//Code to dispose the un-managed resources held by the class like a database connection instance
-				isDisposed = true;
-				base.Dispose(disposing);
-			}
-		}
-		catch(Exception exception){}
-	}
-	//client application should call the Dispose method explicitly to 
-	//free any unmanaged resources for which the object may be holding references or 
-	// if it instantiates managed classes which in turn use such unmanaged resources
-	public void Dispose()
-	{
-		Dispose(true);
-		//This prevents the finalizer from running.
-		GC.SuppressFinalize(this);
-	}
+  private bool isDisposed = false;
+  //Finalization is process by which the Garbage controller 
+  //allows objects to clean up any unmanaged resources that 
+  //they're holding, before actually destroying the instance. 
+  //.Net framework translates the explicit destructor to create 
+  //a call to Finalize(see  Listing 2). It allows the system 
+  //run cleanup code during the finalize operation. 
+  ~Test()
+  {
+    Dispose(false);
+  }
+  protected void Dispose(bool disposing)
+  {
+    //wrap the dispose method in try-catch to ensure that 
+    //the memory is always reclaimed in case of an exception.
+    try
+    {		
+      if(!isDisposed)
+      {
+        if (disposing)
+        {
+          //Code to dispose the managed resources held by 
+          //the class
+        }
+        //Code to dispose the un-managed resources held by 
+        //the class like a database connection instance
+        isDisposed = true;
+        base.Dispose(disposing);
+      }
+    }
+    catch(Exception exception){}
+  }
+  //client application should call the Dispose method explicitly 
+  //to free any unmanaged resources for which the object may 
+  //be holding references or if it instantiates managed classes 
+  //which in turn use such unmanaged resources
+  public void Dispose()
+  {
+    Dispose(true);
+    //This prevents the finalizer from running.
+    GC.SuppressFinalize(this);
+  }
 }
 ```
 
@@ -60,7 +66,7 @@ public class Test : IDisposable
 ```
 public interface IDisposable
 {
-	void Dispose();
+  void Dispose();
 }
 ```
 
@@ -69,13 +75,13 @@ public interface IDisposable
 ```
 protected override void Finalize()
 {
-       try
-       {
-           //Necessary cleanup code
-       }
-       finally
-       {
-           base.Finalize();
-       }
-   }
+  try
+  {
+    //Necessary cleanup code
+  }
+  finally
+  {
+    base.Finalize();
+  }
+}
 ```
