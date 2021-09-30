@@ -3,8 +3,11 @@ title: Protobuf.Net Performance Improvement
 date: 2021-09-30T01:35:43.949Z
 draft: true
 featured: false
+tags:
+  - .Net
+  - C#
 image:
-  filename: featured
+  filename: ""
   focal_point: Smart
   preview_only: false
 ---
