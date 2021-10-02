@@ -66,11 +66,15 @@ avatar:
   gravatar: false
   shape: circle
 comments:
-  provider: ''
+  provider: 'disqus'
   commentable:
-    post: true
+    post: true # Blog posts
+    book: true  # The Book type is used for any project docs and online courses
+    project: true # Portfolio projects
+    publication: true # Publication (e.g. journal) pages
+    event: true
   disqus:
-    shortname: ''
+    shortname: 'www-ajitgoel-net'
     show_count: true
   commento:
     url: ''
