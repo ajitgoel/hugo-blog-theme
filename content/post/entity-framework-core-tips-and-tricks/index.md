@@ -7,7 +7,7 @@ tags:
   - C#
   - Entity-Framework-Core
 image:
-  filename: featured
+  filename: ""
   focal_point: Smart
   preview_only: false
 ---
