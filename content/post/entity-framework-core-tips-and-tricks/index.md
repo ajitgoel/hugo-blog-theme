@@ -52,3 +52,21 @@ var blogs = dbContext.Blogs.FromSql("EXEC dbo.GetBlogs @p0",
 ```
 
 So, each parameter will look like @p0, @p1, and so on.
+
+**Creating filtered collections**\
+We are using an IQueryable<T> here. This is done to allow us to compose multiple statements together before translating them into an SQL statement that will be executed. These queries are not executed until a terminal operation like ToList,\
+ToArray, Count, Any, First, FirstOrDefault, Single, and SingleOrDefault is called upon them. 
+
+```
+var query = ctx.Blogs.AsQueryable();
+if (someLogic)
+{
+  query = query.AddSomeFiltering();
+}
+else
+{
+  query = query.AddOtherFiltering();
+}
+query = query.AddPaging(0);
+var results = query.ToList();
+```
