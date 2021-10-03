@@ -12,9 +12,7 @@ image:
   preview_only: false
 ---
 **Executing client-side functions in LINQ queries**\
-When Entity Framework Core analyzes the LINQ expression it is given, it goes through all\
-its nodes and eventually finds a method call that it does not know how to translate to the\
-underlying data source. In this case, it does the translation exactly as if the method call wasn't there, and, if the property (or properties) is present in the projected results, it then calls the method on the retrieved results.
+When Entity Framework Core analyzes the LINQ expression it is given, it goes through all its nodes and eventually finds a method call that it does not know how to translate to the underlying data source. In this case, it does the translation exactly as if the method call wasn't there, and, if the property (or properties) is present in the projected results, it then calls the method on the retrieved results.
 
 ```
 var blogs = dbContext.Blogs.Where(x=>x.Name.ComputeHash() == 0);
@@ -53,5 +51,4 @@ var blogs = dbContext.Blogs.FromSql("EXEC dbo.GetBlogs @p0",
   Select(x => x.Name).ToList();
 ```
 
-\
 So, each parameter will look like @p0, @p1, and so on.
