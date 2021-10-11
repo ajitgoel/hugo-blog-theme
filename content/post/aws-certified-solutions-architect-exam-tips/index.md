@@ -6,6 +6,9 @@ featured: false
 tags:
   - AWS
   - ""
+categories:
+  - AWS
+  - ""
 image:
   filename: ""
   focal_point: Smart
