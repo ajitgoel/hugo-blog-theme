@@ -17,7 +17,7 @@ You have a robot that can turn left and right. It can also move forward and back
 
 **Solution:**
 
-![Adapter Pattern](adapterdesignpatternwithatwist.jpg "Adapter Pattern")
+![Adapter Pattern]( "Adapter Pattern")
 
 ```
 using System;
