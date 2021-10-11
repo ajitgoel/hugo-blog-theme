@@ -7,6 +7,9 @@ featured: false
 tags:
   - C#
   - Design-Patterns
+categories:
+  - C#
+  - Design-Patterns
 image:
   filename: featured
   focal_point: Smart
