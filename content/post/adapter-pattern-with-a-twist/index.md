@@ -16,11 +16,11 @@ image:
 ---
 One of my friends recently went to an interview to a very well known startup company. It is supposed to hire only the very best people in the industry. One of the problem that he was asked to white board was:
 
-You have a robot that can turn left and right. It can also move forward and backwards. You have a legacy robot that can only turn right and move forward. You want the legacy robot to turn left and to move backwards. Design a adapter class that would allow the legacy robot to turn right and to move backwards.
+You have a robot that can turn left and right. It can also move forward and backwards. You also have a legacy robot that can only turn right and move forward. You want the legacy robot to turn left and to move backwards. Design an adapter class that would allow the legacy robot to turn right and to move backwards.
 
 **Solution:**
 
-![Adapter Pattern]( "Adapter Pattern")
+![Adapter Pattern](adapterdesignpatternwithatwist.jpg "Adapter Pattern")
 
 ```
 using System;
