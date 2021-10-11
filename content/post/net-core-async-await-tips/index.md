@@ -6,6 +6,11 @@ featured: false
 tags:
   - .Net
   - .Net-Core
+  - C#
+categories:
+  - .Net
+  - .Net-Core
+  - C#
 image:
   filename: ""
   focal_point: Smart
