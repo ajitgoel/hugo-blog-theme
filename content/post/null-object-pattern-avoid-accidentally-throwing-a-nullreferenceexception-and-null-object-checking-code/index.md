@@ -9,7 +9,7 @@ categories:
   - C#
   - Design-Patterns
 image:
-  filename: featured
+  filename: ""
   focal_point: Smart
   preview_only: false
 ---
