@@ -5,6 +5,8 @@ draft: false
 featured: false
 tags:
   - C#
+categories:
+  - C#
 image:
   filename: featured
   focal_point: Smart
