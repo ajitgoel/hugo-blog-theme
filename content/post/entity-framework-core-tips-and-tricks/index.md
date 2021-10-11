@@ -6,6 +6,9 @@ featured: false
 tags:
   - C#
   - Entity-Framework-Core
+categories:
+  - C#
+  - Entity-Framework-Core
 image:
   filename: ""
   focal_point: Smart
