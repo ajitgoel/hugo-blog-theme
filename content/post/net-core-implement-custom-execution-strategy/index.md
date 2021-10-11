@@ -34,11 +34,13 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-The custom strategy class was derived using **ExecutionStrategy** class**.**
+The custom strategy class was derived using **ExecutionStrategy** class.
 
 ```
 ///<summary>
-/// The purpose of this class is to wrap the Executionstrategy for the purpose of detecting an exception, primarily for rotating passwords, where the password has expired/changed since the last use
+/// The purpose of this class is to wrap the Executionstrategy for the purpose of 
+/// detecting an exception, primarily for rotating passwords, where the password has 
+/// expired/changed since the last use
 ///</summary>
 public class CustomExecutionStrategy : ExecutionStrategy
 {
@@ -51,10 +53,13 @@ public class CustomExecutionStrategy : ExecutionStrategy
 	protected override bool shouldRetryon(Exception exception)
 	{
 		bool retry = false;
-		//If we get a specific sqLexception, then we're going to assume it is due to the password expiring, so we'll attempt to reset the connection string, forcing the secrets container to refresh its password
+		//If we get a specific sqLexception, then we're going to assume it is 
+        //due to the password expiring, so we'll attempt to reset the connection 
+        //string, forcing the secrets container to refresh its password
 		if(exception.GetType() == typeof (Microsoft.Data.SqlClient.Sqlexception))
 		{
-			//get the new connection string from the third party library into connectionstring variable
+			//get the new connection string from the third party library into 
+            //connectionstring variable
 			executionStrategyDependencies.currentContext.Context.Database.SetConnectionstring(connectionstring);
 			retry=true;
 		}
