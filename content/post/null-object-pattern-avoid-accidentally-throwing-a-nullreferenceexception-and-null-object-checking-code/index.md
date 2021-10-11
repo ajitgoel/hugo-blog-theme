@@ -4,7 +4,9 @@ title: "Null Object Pattern : Avoid accidentally throwing a
 date: 2021-09-26T20:14:47.398Z
 draft: false
 featured: false
-tags: []
+tags:
+  - C#
+  - Design-Patterns
 categories:
   - C#
   - Design-Patterns
