@@ -16,9 +16,10 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-[protobuf-net](https://github.com/protobuf-net/protobuf-net) is a contract based serializer for .NET code created by the famous [Marc Gravell](https://github.com/mgravell), that writes data in the "protocol buffers" serialization format engineered by Google. The API is broadly comparable, in usage, to `XmlSerializer`, `DataContractSerializer`, etc. 
+[protobuf-net](https://github.com/protobuf-net/protobuf-net) is a contract based serializer for .NET code created by the famous [Marc Gravell](https://github.com/mgravell), that writes data in the "protocol buffers" serialization format engineered by Google. The API is broadly comparable, in usage, to `XmlSerializer`, `DataContractSerializer`, etc. \
+To use protobuf.net in your .Net applications, you need to:
 
-1. **Decorate your classes**\
+**1. Decorate your classes**\
 Unlike XmlSerializer, the member-names are identified by an integer to identify each member. 
 
 ```
@@ -64,7 +65,7 @@ using (var file = File.OpenRead("person.bin")) {
 }
 ```
 
-**Inheritance:** Inheritance must be explicitly declared via \[ProtoInclude(...)] on each type with known sub-types.
+**4. Inheritance:** Inheritance must be explicitly declared via \[ProtoInclude(...)] on each type with known sub-types.
 
 ```
 [ProtoContract]
@@ -75,7 +76,7 @@ class SomeBaseType {...}
 class SomeDerivedType {...}
 ```
 
-We used protobuf.net in one of our very heavily used applications. This application used to write static and expensive to retrieve data into xml files(using xml serialization and deserialization), that was then used by our applications.  \
+We used protobuf.net in one of our very heavily used applications. This application used to write static and expensive to retrieve data into xml files(using xml serialization), that was then used by our applications(using xml deserialization).  Needless to say, xml serialization and de-serialization was one of the biggest performance bottleneck identified in our application. \
 We changed the application to use protobuf.net instead of xml serialization. This helped improve the performance of the application by leaps and bounds, as you can see in the chart below(i.e before April release and after April release). 
 
 ![Protobuf.Net-performance improvement](protobuf.net-performanceimprovement2.png "Protobuf.Net-performance improvement")
