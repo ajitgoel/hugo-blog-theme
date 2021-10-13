@@ -1,11 +1,16 @@
 ---
 title: Protobuf.Net performance improvement in .Net application
 date: 2021-09-30T01:35:43.949Z
-draft: true
+draft: false
 featured: false
 tags:
   - .Net
   - C#
+  - Performance-Improvement
+categories:
+  - .Net
+  - C#
+  - Performance-Improvement
 image:
   filename: ""
   focal_point: Smart
