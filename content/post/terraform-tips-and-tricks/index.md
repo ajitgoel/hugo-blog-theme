@@ -34,7 +34,8 @@ The `terraform show` command can be used to print human-readable output from the
 
 You don’t want to pass secrets into the provider as plaintext, especially when this code will later be checked into version control, so many providers allow you to read secrets from environment variables or shared credential files.
 
-Separating plan and apply like `terraform plan -out plan.out && terraform apply "plan.out"` is useful when running Terraform in automation. 
+Separating plan and apply like `terraform plan -out plan.out && terraform apply "plan.out"` is useful when running Terraform in automation. \
+`terraform apply -auto-approve`. The optional `-auto-approve` flag tells Terraform to skip the manual approval step and immediately apply changes.
 
 Each managed resource has life cycle function hooks associated with it: `Create(), Read(), Update(), and Delete().` Terraform invokes these function hooks as part of its normal operations
 
