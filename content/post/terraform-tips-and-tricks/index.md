@@ -28,10 +28,14 @@ The major elements of Terraform are resources, data sources, and providers. **Da
 \
 Code blocks can be chained together to perform dynamic deployments.
 
-All of the stateful information about the resource is stored in a file called `terraform.tfstate`.  The `terraform show` command can be used to print human-readable output from the state file and makes it easy to list information about the resources that Terraform manages.
+All of the stateful information about the resource is stored in a file called `terraform.tfstate`.  Terraform reads the state file during a plan to decide what actions to take during an apply. It’s important not to lose the state file, or Terraform will lose track of all the resources it’s managing.\
+\
+The `terraform show` command can be used to print human-readable output from the state file and makes it easy to list information about the resources that Terraform manages.
 
 You don’t want to pass secrets into the provider as plaintext, especially when this code will later be checked into version control, so many providers allow you to read secrets from environment variables or shared credential files.
 
 Separating plan and apply like `terraform plan -out plan.out && terraform apply "plan.out"` is useful when running Terraform in automation. 
 
-It’s important not to edit, delete, or otherwise tamper with the `terraform.tfstate` file, or Terraform could potentially lose track of the resources it manages.
+Each managed resource has life cycle function hooks associated with it: `Create(), Read(), Update(), and Delete().` Terraform invokes these function hooks as part of its normal operations
+
+`terraform.tfstate.backup` is a copy of the previous state file and can be safely deleted if you wish.
