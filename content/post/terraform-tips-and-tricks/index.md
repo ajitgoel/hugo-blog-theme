@@ -41,4 +41,6 @@ Each managed resource has life cycle function hooks associated with it: `Create(
 
 `terraform.tfstate.backup` is a copy of the previous state file and can be safely deleted if you wish.
 
-`terraform refresh` is a read-only operation that does not modify managed existing infrastructure—just Terraform state.
+`terraform refresh` is a read-only operation that does not modify managed existing infrastructure—just Terraform state.\
+\
+The Local provider for Terraform allows you to create and manage text files on your machine. This is normally used to glue together “real” infrastructure
