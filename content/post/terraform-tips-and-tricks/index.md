@@ -1,7 +1,7 @@
 ---
 title: Terraform-Tips and Tricks
 date: 2021-10-15T04:27:28.838Z
-draft: true
+draft: false
 featured: false
 tags:
   - Terraform
