@@ -39,3 +39,5 @@ Separating plan and apply like `terraform plan -out plan.out && terraform apply 
 Each managed resource has life cycle function hooks associated with it: `Create(), Read(), Update(), and Delete().` Terraform invokes these function hooks as part of its normal operations
 
 `terraform.tfstate.backup` is a copy of the previous state file and can be safely deleted if you wish.
+
+`terraform refresh` is a read-only operation that does not modify managed existing infrastructure—just Terraform state.
