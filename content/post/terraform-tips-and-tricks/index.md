@@ -33,3 +33,7 @@ Code blocks can be chained together to perform dynamic deployments.
 All of the stateful information about the resource is stored in a file called `terraform.tfstate`.  The `terraform show` command can be used to print human-readable output from the state file and makes it easy to list information about the resources that Terraform manages.
 
 Usually, you don’t want to pass secrets into the provider as plaintext, especially when this code will later be checked into version control, so many providers allow you to read secrets from environment variables or shared credential files.
+
+Separating plan and apply like `terraform plan -out plan.out && terraform apply "plan.out"` is useful when running Terraform in automation. 
+
+It’s important not to edit, delete, or otherwise tamper with the `terraform.tfstate` file, or Terraform could potentially lose track of the resources it manages.
