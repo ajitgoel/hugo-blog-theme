@@ -161,7 +161,6 @@ resource "random_password" "password" { #A
   special          = true
   override_special = "/@"
 }
-
 resource "aws_db_instance" "database" {
   allocated_storage      = 10
   engine                 = "mysql"
@@ -193,11 +192,9 @@ variables.tf:
 variable "namespace" {
   type = string
 }
-
 variable "vpc" {
   type = any #A
 }
-
 variable "sg" {
   type = any #A
 }
@@ -297,6 +294,7 @@ module "autoscaling" {
 module "database" {
   source    = "./modules/database" #A
   namespace = var.namespace #B
+  # next 2 lines, data bubbles up from the networking module and trickles down into the database module.
   vpc = module.networking.vpc #A
   sg  = module.networking.sg #A
 }
