@@ -145,6 +145,7 @@ variable "sg" {
 **modules\autoscaling:**
 
 ```
+# All cloud_config.yaml file does is install some packages, create a configuration file (/etc/server.conf), fetch application code (deployment.zip) and start the server.
 cloud_config.yaml
 -------------------------------------------
 #cloud-config
