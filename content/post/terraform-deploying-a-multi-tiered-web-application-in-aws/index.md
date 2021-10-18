@@ -3,6 +3,12 @@ title: "Terraform: Deploying a multi-tiered web application in AWS"
 date: 2021-10-18T03:21:40.228Z
 draft: false
 featured: false
+tags:
+  - Terraform
+  - AWS
+categories:
+  - Terraform
+  - AWS
 image:
   filename: ""
   focal_point: Smart
