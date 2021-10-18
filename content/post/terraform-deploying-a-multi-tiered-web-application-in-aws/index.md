@@ -289,7 +289,7 @@ main.tf:
 module "autoscaling" {
   source      = "./modules/autoscaling" #A
   namespace   = var.namespace #B
-    ssh_keypair = var.ssh_keypair #A
+  ssh_keypair = var.ssh_keypair #A
   vpc       = module.networking.vpc #A
   sg        = module.networking.sg #A
   db_config = module.database.db_config #A
@@ -297,7 +297,7 @@ module "autoscaling" {
 module "database" {
   source    = "./modules/database" #A
   namespace = var.namespace #B
-    vpc = module.networking.vpc #A
+  vpc = module.networking.vpc #A
   sg  = module.networking.sg #A
 }
 module "networking" {
@@ -309,7 +309,8 @@ outputs.tf:
 ------------------
 output "db_password" {
   value = module.database.db_config.password
-  sensitive = true # to ensure that the password is not output to console
+  # to ensure that the password is not output to console
+  sensitive = true 
 }
 output "lb_dns_name" {
   value = module.autoscaling.lb_dns_name
