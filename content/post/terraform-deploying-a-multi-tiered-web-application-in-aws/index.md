@@ -143,8 +143,10 @@ variable "db_config" {
 }
 ```
 
+**modules\database:**
+
 ```
-modules\database\main.tf:
+main.tf:
 --------------------------
 resource "random_password" "password" { #A
   length           = 16
@@ -166,7 +168,7 @@ resource "aws_db_instance" "database" {
   skip_final_snapshot    = true
 }
 
-modules\database\outputs.tf:
+outputs.tf:
 ----------------------------------
 output "db_config" {
   value = {
@@ -178,7 +180,7 @@ output "db_config" {
   }
 }
 
-modules\database\variables.tf:
+variables.tf:
 -----------------------------------
 variable "namespace" {
   type = string
