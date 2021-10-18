@@ -287,6 +287,7 @@ main.tf:
 module "autoscaling" {
   source      = "./modules/autoscaling" #A
   namespace   = var.namespace #B
+  # next 4 lines, input arguments for the autoscaling module, set by other module’s outputs
   ssh_keypair = var.ssh_keypair #A
   vpc       = module.networking.vpc #A
   sg        = module.networking.sg #A
