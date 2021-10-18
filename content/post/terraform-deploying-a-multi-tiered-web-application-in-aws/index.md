@@ -340,6 +340,7 @@ variable "namespace" {
 }
 variable "ssh_keypair" {
   description = "SSH keypair to use for EC2 instance"
+  #set to null as it requires having a generated SSH keypair
   default     = null #A
   type        = string
 }
