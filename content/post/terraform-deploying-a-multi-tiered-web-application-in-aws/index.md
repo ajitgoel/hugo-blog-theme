@@ -156,6 +156,7 @@ variable "db_config" {
 ```
 main.tf:
 --------------------------
+# Uses the random provider to create a 16-character password
 resource "random_password" "password" { #A
   length           = 16
   special          = true
