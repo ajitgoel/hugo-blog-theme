@@ -228,6 +228,7 @@ module "alb" {
 
   http_tcp_listeners = [
     {
+      # The load balancer listens on port 80, which is mapped to 8080 on the instance
       port               = 80, #C
       protocol           = "HTTP"
       target_group_index = 0
