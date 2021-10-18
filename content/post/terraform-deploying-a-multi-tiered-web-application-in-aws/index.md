@@ -8,8 +8,10 @@ image:
   focal_point: Smart
   preview_only: false
 ---
+**modules\autoscaling:**
+
 ```
-modules\autoscaling\cloud_config.yaml
+cloud_config.yaml
 -------------------------------------------
 #cloud-config
 write_files:
@@ -32,7 +34,7 @@ packages:
   - wget
   - unzip 
 
-modules\autoscaling\main.tf:
+main.tf:
 ----------------------------------
 module "iam_instance_profile" {
   source  = "terraform-in-action/iip/aws"
@@ -106,13 +108,13 @@ module "alb" {
     }
   ]
 }
-modules\autoscaling\outputs.tf:
+outputs.tf:
 --------------------------------
 output "lb_dns_name" {
   value = module.alb.this_lb_dns_name
 }
 
-modules\autoscaling\variables.tf:
+variables.tf:
 -----------------------------------
 variable "namespace" {
   type = string
