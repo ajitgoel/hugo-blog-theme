@@ -193,6 +193,7 @@ variable "namespace" {
   type = string
 }
 variable "vpc" {
+  # A type constraint of “any” means Terraform will skip type checking.
   type = any #A
 }
 variable "sg" {
