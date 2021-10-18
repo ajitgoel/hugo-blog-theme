@@ -248,6 +248,7 @@ module "alb" {
 outputs.tf:
 --------------------------------
 output "lb_dns_name" {
+  # This output is bubbled up to the root module, makes it easier to find the DNS name after deploying.
   value = module.alb.this_lb_dns_name
 }
 
