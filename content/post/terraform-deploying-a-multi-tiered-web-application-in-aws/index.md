@@ -171,6 +171,7 @@ resource "aws_db_instance" "database" {
   name                   = "pets"
   username               = "admin"
   password               = random_password.password.result
+  # The next 2 values, came from the networking module
   db_subnet_group_name   = var.vpc.database_subnet_group #B
   vpc_security_group_ids = [var.sg.db] #B
   skip_final_snapshot    = true
