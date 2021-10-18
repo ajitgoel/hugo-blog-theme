@@ -259,11 +259,13 @@ module "db_sg" {
 outputs.tf:
 -------------
 output "vpc" {
+  # Passes a reference to the entire vpc module as an output
   value = module.vpc #A
 }
 
 output "sg" {
   value = { #B
+    # Constructs a new object containing the ID for each of the three security groups
     lb     = module.lb_sg.security_group.id #B
     db     = module.db_sg.security_group.id #B
     websvr = module.websvr_sg.security_group.id #B
