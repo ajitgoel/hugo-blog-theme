@@ -169,7 +169,7 @@ resource "aws_db_instance" "database" {
 }
 
 modules\database\outputs.tf:
---------------------------
+----------------------------------
 output "db_config" {
   value = {
     user     = aws_db_instance.database.username #A
@@ -181,7 +181,7 @@ output "db_config" {
 }
 
 modules\database\variables.tf:
---------------------------
+-----------------------------------
 variable "namespace" {
   type = string
 }
