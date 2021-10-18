@@ -145,7 +145,56 @@ variable "db_config" {
 }
 ```
 
+```
+modules\database\main.tf:
+--------------------------
+resource "random_password" "password" { #A
+  length           = 16
+  special          = true
+  override_special = "/@"
+}
 
+resource "aws_db_instance" "database" {
+  allocated_storage      = 10
+  engine                 = "mysql"
+  engine_version         = "8.0"
+  instance_class         = "db.t2.micro"
+  identifier             = "${var.namespace}-db-instance"
+  name                   = "pets"
+  username               = "admin"
+  password               = random_password.password.result
+  db_subnet_group_name   = var.vpc.database_subnet_group #B
+  vpc_security_group_ids = [var.sg.db] #B
+  skip_final_snapshot    = true
+}
+
+modules\database\outputs.tf:
+--------------------------
+output "db_config" {
+  value = {
+    user     = aws_db_instance.database.username #A
+    password = aws_db_instance.database.password #A
+    database = aws_db_instance.database.name #A
+    hostname = aws_db_instance.database.address #A
+    port     = aws_db_instance.database.port #A
+  }
+}
+
+modules\database\variables.tf:
+--------------------------
+variable "namespace" {
+  type = string
+}
+
+variable "vpc" {
+  type = any #A
+}
+
+variable "sg" {
+  type = any #A
+}
+
+```
 
 ```
 main.tf:
