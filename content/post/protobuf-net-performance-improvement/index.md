@@ -22,10 +22,9 @@ To use protobuf.net in your .Net applications, you need to:
 **1. Decorate your classes**\
 Unlike XmlSerializer, the member-names are identified by an integer to identify each member. 
 
-```
-[ProtoContract]
+{{<hl>}}[ProtoContract]{{</hl>}}
 class Person {
-    [ProtoMember(1)]
+    {{<hl>}}[ProtoMember(1)]{{</hl>}}
     public int Id {get;set;}
     [ProtoMember(2)]
     public string Name {get;set;}
@@ -69,7 +68,7 @@ using (var file = File.OpenRead("person.bin")) {
 
 ```
 [ProtoContract]
-[ProtoInclude(7, typeof(SomeDerivedType))]
+{{<hl>}}[ProtoInclude(7, typeof(SomeDerivedType))]{{</hl>}}
 class SomeBaseType {...}
 
 [ProtoContract]
