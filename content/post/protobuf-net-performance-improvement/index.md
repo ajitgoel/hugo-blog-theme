@@ -38,7 +38,6 @@ class Address {
     [ProtoMember(2)]
     public string Line2 {get;set;}
 }
-```
 
 2 **Serialize your data:** This writes a 32 byte file to "person.bin"
 
@@ -66,14 +65,12 @@ using (var file = File.OpenRead("person.bin")) {
 
 **4. Inheritance:** Inheritance must be explicitly declared via \[ProtoInclude(...)] on each type with known sub-types.
 
-```
 [ProtoContract]
 {{<hl>}}[ProtoInclude(7, typeof(SomeDerivedType))]{{</hl>}}
 class SomeBaseType {...}
 
 [ProtoContract]
 class SomeDerivedType {...}
-```
 
 We used protobuf.net in one of our very heavily used applications. This application used to write static and expensive to retrieve data into xml files(using xml serialization), that was then used by our applications(using xml deserialization).  Needless to say, xml serialization and de-serialization was one of the biggest performance bottleneck identified in our application. \
 We changed the application to use protobuf.net instead of xml serialization. This helped improve the performance of the application by leaps and bounds, as you can see in the chart below(i.e before April release and after April release). 
