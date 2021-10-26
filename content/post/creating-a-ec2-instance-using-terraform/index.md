@@ -15,6 +15,8 @@ image:
 
 
 ```
+main.tf:
+------------
 provider "aws" {
   region = "us-west-2"
 }
@@ -50,5 +52,4 @@ resource "aws_instance" "EC2" {
     Name = "EC2Instance"
   }
 }
-
 ```
