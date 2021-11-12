@@ -42,8 +42,8 @@ class StrategyDesignPatternClient
 public class SortedList
 {
   private List<string> list = new List<string>();
-  private SortStrategy sortstrategy;
-  public void SetSortStrategy(SortStrategy sortstrategy)
+  private ISortStrategy sortstrategy;
+  public void SetSortStrategy(ISortStrategy sortstrategy)
   {
     this.sortstrategy = sortstrategy;
   }
