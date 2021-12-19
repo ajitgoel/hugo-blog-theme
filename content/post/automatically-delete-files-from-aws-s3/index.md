@@ -3,6 +3,9 @@ title: Automatically delete files from AWS S3
 date: 2021-12-19T22:42:44.331Z
 draft: false
 featured: false
+tags:
+  - aws
+  - ""
 image:
   filename: featured
   focal_point: Smart
