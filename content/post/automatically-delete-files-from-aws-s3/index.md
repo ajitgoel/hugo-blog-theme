@@ -5,9 +5,10 @@ draft: false
 featured: false
 tags:
   - aws
-  - ""
+  - AWS-S3
 categories:
   - AWS
+  - AWS-S3
 image:
   filename: featured
   focal_point: Smart
