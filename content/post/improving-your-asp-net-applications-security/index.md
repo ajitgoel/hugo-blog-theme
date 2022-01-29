@@ -25,13 +25,12 @@ ASP.NET Core automatically adds anti-forgery tokens to any forms you create usin
 
 **How an CRSF vulnerability is exploited:** 
 
-1. A user browses your app and logs in, which sets an authentication cookie.
-2. The user then visits a malicious website (or a compromised website)
-3. The malicious site crafts a form that matches one on your app and POSTs it to your app.
-4. As the browser automatically sends the authentication cookies, your app executes the form as though the user sent it directly\
-   \
-   **Protecting against a CSRF attack using anti-forgery tokens:**
-
+* A user browses your app and logs in, which sets an authentication cookie.
+* The user then visits a malicious website (or a compromised website)
+* The malicious site crafts a form that matches one on your application website and POSTs it to your application website.
+* As the browser automatically sends the authentication cookies, your application website executes the form as though the user sent it directly\
+  \
+  **Protecting against a CSRF attack using anti-forgery tokens:**
 * A user browses your app and logs in, which sets an authentication cookie
 * Forms on your app also generate an anti-forgery token cookie.
 * The user then visits a malicious website (or a compromised website).
