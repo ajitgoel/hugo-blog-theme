@@ -11,7 +11,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-**Cross-site scripting (XSS) attacks** involve malicious users injecting content into your app, typically to run malicious JavaScript when users browse your app. You can avoid XSS injection attacks by always encoding unsafe input before writing it to a page. Razor does this automatically unless you use the `@Html.Raw()` method, so use it sparingly and carefully.
+**Cross-site scripting (XSS) attacks** involve malicious users injecting content into your app, typically to run malicious JavaScript when users browse your app. You can avoid XSS injection attacks by always encoding unsafe input before writing it to a page. Razor does this automatically unless you use the `@Html.Raw()` method.
 
 **How an XSS vulnerability is exploited:**
 
