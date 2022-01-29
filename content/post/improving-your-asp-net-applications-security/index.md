@@ -31,11 +31,11 @@ ASP.NET Core automatically adds anti-forgery tokens to any forms you create usin
 * As the browser automatically sends the authentication cookies, your application website executes the form as though the user sent it directly\
   \
   **Protecting against a CSRF attack using anti-forgery tokens:**
-* A user browses your app and logs in, which sets an authentication cookie
-* Forms on your app also generate an anti-forgery token cookie.
+* A user browses your application website and logs in, which sets an authentication cookie
+* Forms on your application website also generate an anti-forgery token cookie.
 * The user then visits a malicious website (or a compromised website).
-* The malicious website forges a form post to your website, but it doesn’t have an anti-forgery token.
-* The browser automatically sends the cookies, but because the form contains no anti-forgery token, your app rejects the request.
+* The malicious website forges a form post to your application website, but it doesn’t have an anti-forgery token.
+* The browser automatically sends the cookies, but because the form contains no anti-forgery token, your application website rejects the request.
 
 **Open redirect attacks** use the common returnURL mechanism after logging in to redirect users to malicious websites. You can prevent this attack by ensuring you only redirect to local URLs, URLs that belong to your app.\
 **Insecure direct object references** are a common problem where you expose the ID of database entities in the URL. You should always verify that users have permission to access or change the requested resource by using resource-based authorization in your action methods.\
