@@ -16,6 +16,11 @@ social:
   - icon: instagram
     icon_pack: fab
     link: https://instagram.com/ajitgoel
+  - display:
+      header: false
+    icon_pack: fab
+    icon: github
+    link: https://github.com/ajitgoel
 organizations:
   - name: J P Morgan Chase
     url: ""
