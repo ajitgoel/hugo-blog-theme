@@ -18,7 +18,8 @@ In the screenshot below, we need to test the readonly DirectDebitDate property b
 
 ![](method-with-database-context-dependency.png)
 
-To make the code unit testable, I created a [Func ](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0), passed the values from the database context dependency and then unit tested the Func. 
+To make the code unit testable, I created a [Func](https://docs.microsoft.com/en-us/dotnet/api/system.func-2?view=net-6.0), passed the values from the database context dependency and then unit tested the Func. \
+As we know, for a Func, all the parameters (except the last) are input parameters whereas the last parameter is the output parameter. 
 
 ![Changed method](changed-method.png)
 
