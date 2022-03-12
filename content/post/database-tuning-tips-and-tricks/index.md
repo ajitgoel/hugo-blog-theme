@@ -21,13 +21,9 @@ do\
 d. If you are performing batch inserts of million-plus rows, then drop the SQL indexes before performing the batch inserts and then recreate the indexes. \
 e. Use `Exists`instead of `Count.`\
 Eg: use \
-`IF EXISTS(SELECT FIRSTNAME FROM EMPLOYEES)
-Begin`\
-`End`\
+`IF EXISTS(SELECT FIRSTNAME FROM EMPLOYEES)`\
 instead of\
 `IF (SELECT COUNT(1) FROM EMPLOYEES) > 0`\
-`Begin`\
-`End`\
 f. select only the columns you need Eg: instead of \
 `SELECT * FROM Employees`\
 use\
