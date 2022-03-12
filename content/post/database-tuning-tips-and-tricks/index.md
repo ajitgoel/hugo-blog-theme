@@ -1,8 +1,11 @@
 ---
-title: Database Tuning:Tips and Tricks
+title: "Database Tuning : Tips and Tricks"
 date: 2022-03-12T02:27:05.233Z
 draft: false
 featured: false
+tags:
+  - T-Sql
+  - SQL-Server
 image:
   filename: featured
   focal_point: Smart
