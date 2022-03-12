@@ -28,8 +28,16 @@ SELECT c.Name, c.City, co.CompanyName FROM Customer c LEFT JOIN Company co ON c.
 ```
 
 d. If you are performing batch inserts of million-plus rows, then drop the SQL indexes before performing the batch inserts and then recreate the indexes. \
-e. Use `Exists `instead of `Count. `\
+e. Use `Exists`instead of `Count.`\
+use \
+`IF EXISTS(SELECT FIRSTNAME FROM EMPLOYEES)
+Begin`\
+`End`\
+instead of\
+`IF (SELECT COUNT(1) FROM EMPLOYEES) > 0`\
+`Begin`\
+`End`\
 f. select only the columns you need eg: instead of \
 `SELECT * FROM Employees`\
 use\
-`SELECT FirstName, City, Country FROM Employees```
+`` `SELECT FirstName, City, Country FROM Employees` ``
