@@ -7,7 +7,7 @@ tags:
   - T-Sql
   - SQL-Server
 image:
-  filename: featured
+  filename: ""
   focal_point: Smart
   preview_only: false
 ---
