@@ -39,9 +39,14 @@ Application load balancers(ALBs) can have multiple paths and targets configured 
 
 e. To package Lambda code in a container image, we should:\
 e.1. create a Docker image and push it to an Amazon Elastic Container Registry(ECR) repository. \
-e.2. create a lambda function with the package-type of `Image` and code that is `ImageUri `of docker image. 
+e.2. create a lambda function with the package-type of `Image` and code that is `ImageUri`of docker image. 
 
 f. To respond to an CloudWatch event which is triggered whenever something changes in your AWS infrastructure, we should:\
 f.1. Set up the lambda function and subscribe to the cloudwatch events of interest, using CloudFormation template. Do not return a value in the lambda function, as the Lambda function is invoked asynchronously by a CloudWatch event.\
 f.2. authorize the Lambda function to use other AWS services with an IAM role. \
 We do this by creating a IAM policy attached to the IAM role(which defines the services and action that the Lambda function is allowed to access). The Lambda function then assumes the IAM role to be able to send authenticated and authorized requests to other AWS services. Temporary credentials are generated based on the IAM role and injected into each invocation
+
+g. To access endpoints within a private network(VPC), we must:\
+g.1. define the VPC, the subnets, as well as security groups for the Lambda function\
+g.2. add network interfaces to the lambda function so it can access resources with the VPC\
+**Cons:** Placing a Lambda function in a VPC increases complexity, especially when scaling to a large number of concurrent executions. For example, the number of available private IP addresses in a VPC is limited, but a Lambda function will need multiple private IP addresses to be able to scale the number of concurrent invocations.
