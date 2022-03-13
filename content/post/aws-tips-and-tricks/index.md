@@ -43,4 +43,6 @@ e.2. create a lambda function with the package-type of `Image` and code that is 
 
 f. To respond to an CloudWatch event which is triggered whenever something changes in your AWS infrastructure, we should:\
 f.1. Set up the lambda function and subscribe to the cloudwatch events of interest, using CloudFormation template. ==Do not return a value in the lambda function, as the Lambda function is invoked asynchronously by a CloudWatch event.==\
-f.2. authorize the Lambda function to use other AWS services with an IAM role.
+f.2. authorize the Lambda function to use other AWS services with an IAM role. \
+We do this by creating a IAM policy attached to the IAM role(which defines the services and action that the Lambda function is allowed to access). The Lambda function then assumes the IAM role to be able to send authenticated and\
+authorized requests to other AWS services. Temporary credentials are generated based on the IAM role and injected into each invocation
