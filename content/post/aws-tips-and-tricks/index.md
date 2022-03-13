@@ -19,10 +19,17 @@ a.2. Add permission to Lambda function by using the `aws lambda add-permission`c
 a.3. Configure EventBridge to invoke the lambda function. \
 \
 b. Reduce AWS Lambda startup time to eliminate latency associated with cold starts, we should:\
-1. configure the provisioned concurrency for the lambda function with provisioned concurrency.\
-To minimize AWS Lambda cold start time, we should \
-1. keep the size of your deployment package as small as possible\
-2. provision additional memory\
-3. use a runtime environment like Python, Node.js, or Go instead of C# or Java.  \
+b.1. configure the provisioned concurrency for the lambda function with provisioned concurrency.\
 \
-c.
+c. To minimize AWS Lambda cold start time, we should \
+c.1. keep the size of your deployment package as small as possible\
+c.2. provision additional memory\
+c.3. use a runtime environment like Python, Node.js, or Go instead of C# or Java.  \
+\
+d.  To expose a lambda function using an Application load balancers(ALBs), we should:\
+d.1. add permission to Lambda function by using the `aws lambda add-permission`command, so ELB can invoke it. \
+d.2. create an ALB target group with the target type set to lambda.\
+d.3. use the `register-targets `command to register the Lambda function as a target.\
+d.4. modify the listener for your ALB on port 80; then create a rule that forwards traffic destined for the /function path to your target group.\
+\
+Application load balancers(ALBs) can have multiple paths and targets configured for a single load balancer, sending portions of traffic to specific targets (Lambda functions, containers, EC2 instances, etc.) ALBs also support routing to Lambda functions using header values.
