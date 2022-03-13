@@ -16,12 +16,12 @@ image:
 ---
 **AWS Lambda:**\
 \
-a. Invoke a Lambda function on a schedule eg: for checking a stock price, we should:\
+a. To invoke a Lambda function on a schedule eg: for checking a stock price, we should:\
 a.1. Create an event rule with a scheduled expression.\
 a.2. Add permission to Lambda function by using the `aws lambda add-permission`command, so EventBridge(previously known as Amazon CloudWatch Events) can invoke it. \
 a.3. Configure EventBridge to invoke the lambda function. \
 \
-b. Reduce AWS Lambda startup time to eliminate latency associated with cold starts, we should:\
+b. To reduce AWS Lambda startup time to eliminate latency associated with cold starts, we should:\
 b.1. configure the provisioned concurrency for the lambda function with provisioned concurrency.\
 \
 c. To minimize AWS Lambda cold start time, we should: \
@@ -37,6 +37,9 @@ d.4. modify the listener for your ALB on port 80; then create a rule that forwar
 \
 Application load balancers(ALBs) can have multiple paths and targets configured for a single load balancer, sending portions of traffic to specific targets (Lambda functions, containers, EC2 instances, etc.) ALBs also support routing to Lambda functions using header values.
 
-e. to package Lambda code in a container image, we should:\
+e. To package Lambda code in a container image, we should:\
 e.1. create a Docker image and push it to an Amazon Elastic Container Registry(ECR) repository. \
-e.2. create a lambda function with the package-type of `Image` and code that is `ImageUri `of docker image.
+e.2. create a lambda function with the package-type of `Image` and code that is `ImageUri `of docker image. 
+
+f. To respond to an CloudWatch event which is triggered whenever something changes in your AWS infrastructure, we should:\
+f.1.
