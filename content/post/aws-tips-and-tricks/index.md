@@ -9,6 +9,11 @@ tags:
   - AWS-Lambda
   - EventBridge
   - ALB
+categories:
+  - AWS
+  - AWS-Lambda
+  - EventBridge
+  - ALB
 image:
   filename: ""
   focal_point: Smart
