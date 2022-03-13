@@ -5,7 +5,10 @@ summary: ""
 draft: false
 featured: false
 tags:
-  - AWS; AWS-Lambda; EventBridge
+  - AWS
+  - AWS-Lambda
+  - EventBridge
+  - ALB
 image:
   filename: ""
   focal_point: Smart
