@@ -42,4 +42,6 @@ e.1. create a Docker image and push it to an Amazon Elastic Container Registry(E
 e.2. create a lambda function with the package-type of `Image` and code that is `ImageUri `of docker image. 
 
 f. To respond to an CloudWatch event which is triggered whenever something changes in your AWS infrastructure, we should:\
-f.1.
+f.1. Set up the lambda function and subscribe to the cloudwatch events of interest, using CloudFormation template. \
+f.2. authorize the Lambda function to use other AWS services with an IAM role.\
+Do not return a value in the lambda function, as the Lambda function is invoked asynchronously by a CloudWatch event.
