@@ -32,7 +32,11 @@ c.3. use a runtime environment like Python, Node.js, or Go instead of C# or Java
 d.  To expose a lambda function using an Application load balancers(ALBs), we should:\
 d.1. add permission to Lambda function by using the `aws lambda add-permission`command, so ELB can invoke it. \
 d.2. create an ALB target group with the target type set to lambda.\
-d.3. use the `register-targets `command to register the Lambda function as a target.\
+d.3. use the `register-targets`command to register the Lambda function as a target.\
 d.4. modify the listener for your ALB on port 80; then create a rule that forwards traffic destined for the /function path to your target group.\
 \
 Application load balancers(ALBs) can have multiple paths and targets configured for a single load balancer, sending portions of traffic to specific targets (Lambda functions, containers, EC2 instances, etc.) ALBs also support routing to Lambda functions using header values.
+
+e. to package Lambda code in a container image, we should:\
+e.1. create a Docker image and push it to an Amazon Elastic Container Registry(ECR) repository. \
+e.2. create a lambda function with the package-type of `Image` and code that is `ImageUri `of docker image.
