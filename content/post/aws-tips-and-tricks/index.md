@@ -19,6 +19,10 @@ a.2. Add permission to Lambda function by using the `aws lambda add-permission`c
 a.3. Configure EventBridge to invoke the lambda function. \
 \
 b. Reduce AWS Lambda startup time to eliminate latency associated with cold starts, we should:\
-configure the provisioned concurrency for the lambda function with provisioned concurrency.\
+1. configure the provisioned concurrency for the lambda function with provisioned concurrency.\
+To minimize AWS Lambda cold start time, we should \
+1. keep the size of your deployment package as small as possible\
+2. provision additional memory\
+3. use a runtime environment like Python, Node.js, or Go instead of C# or Java.  \
 \
 c.
