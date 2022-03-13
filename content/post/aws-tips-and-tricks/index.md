@@ -13,7 +13,7 @@ image:
 ---
 **AWS Lambda:**\
 \
-a. Invoke a Lambda function on a schedule eg: for checking a stock price, we should \
+a. Invoke a Lambda function on a schedule eg: for checking a stock price, we should:\
 a.1. Create an event rule with a scheduled expression.\
 a.2. Add permission to Lambda function by using the `aws lambda add-permission`command, so EventBridge(previously known as Amazon CloudWatch Events) can invoke it. \
 a.3. Configure EventBridge to invoke the lambda function. \
@@ -21,7 +21,7 @@ a.3. Configure EventBridge to invoke the lambda function. \
 b. Reduce AWS Lambda startup time to eliminate latency associated with cold starts, we should:\
 b.1. configure the provisioned concurrency for the lambda function with provisioned concurrency.\
 \
-c. To minimize AWS Lambda cold start time, we should \
+c. To minimize AWS Lambda cold start time, we should: \
 c.1. keep the size of your deployment package as small as possible\
 c.2. provision additional memory\
 c.3. use a runtime environment like Python, Node.js, or Go instead of C# or Java.  \
