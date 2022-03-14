@@ -6,6 +6,9 @@ featured: false
 tags:
   - T-Sql
   - SQL-Server
+categories:
+  - T-Sql
+  - SQL-Server
 image:
   filename: ""
   focal_point: Smart
