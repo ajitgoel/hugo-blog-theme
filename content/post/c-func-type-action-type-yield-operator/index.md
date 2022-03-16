@@ -5,8 +5,10 @@ draft: false
 featured: false
 tags:
   - C#
+categories:
+  - C#
 image:
-  filename: featured
+  filename: ""
   focal_point: Smart
   preview_only: false
 ---

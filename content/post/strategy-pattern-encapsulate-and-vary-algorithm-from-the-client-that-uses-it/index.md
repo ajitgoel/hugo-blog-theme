@@ -6,6 +6,9 @@ featured: false
 tags:
   - C#
   - Design-Patterns
+categories:
+  - C#
+  - Design-Patterns
 image:
   filename: ""
   focal_point: Smart
@@ -39,8 +42,8 @@ class StrategyDesignPatternClient
 public class SortedList
 {
   private List<string> list = new List<string>();
-  private SortStrategy sortstrategy;
-  public void SetSortStrategy(SortStrategy sortstrategy)
+  private ISortStrategy sortstrategy;
+  public void SetSortStrategy(ISortStrategy sortstrategy)
   {
     this.sortstrategy = sortstrategy;
   }

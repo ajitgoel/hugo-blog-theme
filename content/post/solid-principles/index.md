@@ -6,6 +6,11 @@ featured: false
 tags:
   - C#
   - Design-Patterns
+  - OOAD
+categories:
+  - C#
+  - Design-Patterns
+  - OOAD
 image:
   filename: featured
   focal_point: Smart
