@@ -25,9 +25,9 @@ Log exceptions in classic(asmx) webservices without adding try-catch blocks thro
 
 **Solution:**\
 Exceptions can be easily logged in classic(asmx) webservices by using a Soap Extension.\
-a. Create the soap extension. Override the call to **ChainStream** method where we get a new copy of the stream. Use the **ProcessMessage** switch to examine the Soap Envelope and log an exception using a logging framework of our choice(I have used Elmah logging framework here).\
-b. Register the SoapExtension in the client application’s web configuration. The “type” property follows the format of\
-NameSpaceName.ClassName, SoapExtension’sAssemblyName.
+a. Create the soap extension. Override the call to **`ChainStream`** method where we get a new copy of the stream. Use the **`ProcessMessage`** switch to examine the Soap Envelope and log an exception using a logging framework of our choice(I have used `Elmah `logging framework here).\
+b. Register the `SoapExtension `in the client application’s web configuration. The “type” property follows the format of\
+`NameSpaceName.ClassName, SoapExtension’sAssemblyName`.
 
 ```
 namespace SoapExtensions
