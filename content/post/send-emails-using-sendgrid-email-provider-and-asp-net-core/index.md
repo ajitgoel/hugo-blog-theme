@@ -37,8 +37,8 @@ Now create a account in Sendgrid.com and add an API key to use the SendGrid prov
 
 ```
 public void ConfigureServices(IServiceCollection services) {
-  services.AddTransient < IEmailSender, EmailSender > ();
-  services.Configure < AuthMessageSenderOptions > (options =>
+  services.AddTransient<IEmailSender,EmailSender>();
+  services.Configure<AuthMessageSenderOptions>(options =>
     Configuration.GetSection("SendGridEmailSettings").Bind(options));
 }
 ```
