@@ -16,12 +16,6 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-
-
-
-
-<!--StartFragment-->
-
 We can use database level encryption to encrypt sensitive information. A commonly used level of encryption is to only encrypt columns that contain sensitive information like credit card numbers, date of birth etc. Encrypting and decrypting database level information is very CPU resource intensive. If a column is used as a primary key or used in comparison clauses (WHERE clauses, JOIN conditions) the database will have to decrypt the whole column to perform operations involving those columns.
 
 We faced a similar performance issue in one of the previous companies. Database selects based on SSN were very slow as the database had to decrypt the whole column to perform comparison. If you look at the information below(under **Current Problem**) the database performed 4413 logical reads, 4406 read-ahead reads and took 302 milli seconds to perform the operation.
