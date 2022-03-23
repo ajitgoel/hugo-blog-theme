@@ -123,3 +123,7 @@ SQL Server parse and compile time:
  SQL Server Execution Times:
    CPU time = 0 ms,  elapsed time = 0 ms.
 ```
+
+![](030817_1532_improveperf3.png)
+
+![](030817_1532_improveperf4.png)
