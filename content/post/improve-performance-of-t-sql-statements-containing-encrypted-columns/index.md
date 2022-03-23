@@ -4,9 +4,13 @@ date: 2022-03-23T03:14:38.669Z
 draft: false
 featured: false
 tags:
-  - Performance-Optimization;SQL-server;T-SQL
+  - Performance-Optimization
+  - SQL-server
+  - T-SQL
 categories:
-  - Performance-Optimization;SQL-server;T-SQL
+  - Performance-Optimization
+  - SQL-server
+  - T-SQL
 image:
   filename: featured
   focal_point: Smart
