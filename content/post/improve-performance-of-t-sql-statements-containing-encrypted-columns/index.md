@@ -5,6 +5,8 @@ draft: false
 featured: false
 tags:
   - Performance-Optimization;SQL-server;T-SQL
+categories:
+  - Performance-Optimization;SQL-server;T-SQL
 image:
   filename: featured
   focal_point: Smart
