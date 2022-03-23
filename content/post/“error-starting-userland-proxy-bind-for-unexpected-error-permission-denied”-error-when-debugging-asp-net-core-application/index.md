@@ -9,7 +9,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-If you get an “Error starting userland proxy: Bind for unexpected error Permission denied” error, when debugging your ASP.Net Core application in Docker, then run the following command to find the excluded ports range, being used by different applications:
+If you get an “`Error starting userland proxy: Bind for unexpected error Permission denied`” error, when debugging your ASP.Net Core application in Docker, then run the following command to find the excluded ports range, being used by different applications:
 
 `netsh int ip show excludedportrange protocol=tcp`
 
