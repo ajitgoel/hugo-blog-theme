@@ -18,3 +18,5 @@ A lot of times when we “show traffic” in Fiddler, way too much traffic gets 
 * In the “Show only the following hosts” textbox, type the names of the hosts separated by colon.
 * If you have several similar hosts then you can use wildcards also.\
   Example: If you want to log the requests for drive.realpage.com, photos.realpage.com then instead of listing each one of them, you can use *.realpage.com. See below for an example
+
+  ![](2022-03-22-22_58_00-window.png)
