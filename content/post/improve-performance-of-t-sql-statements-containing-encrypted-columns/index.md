@@ -12,6 +12,10 @@ image:
   focal_point: Smart
   preview_only: false
 ---
+
+
+
+
 <!--StartFragment-->
 
 We can use database level encryption to encrypt sensitive information. A commonly used level of encryption is to only encrypt columns that contain sensitive information like credit card numbers, date of birth etc. Encrypting and decrypting database level information is very CPU resource intensive. If a column is used as a primary key or used in comparison clauses (WHERE clauses, JOIN conditions) the database will have to decrypt the whole column to perform operations involving those columns.
@@ -23,4 +27,41 @@ All in all a huge performance improvement.
 
 **Current Problem:**
 
-<!--EndFragment-->
+```
+begin
+DBCC FREEPROCCACHE;
+DBCC DROPCLEANBUFFERS;
+SET STATISTICS TIME ON;
+SET STATISTICS IO ON;
+ 
+declare @ssn varchar(max) = '123123123'
+with PersonalIdentifierInformationCTE as
+(
+select CONVERT (CHAR(32), DECRYPTBYKEYAUTOCERT(CERT_ID('CertificateName'), NULL, Identifier)) as Identifier
+from PersonalIdentifierInformation
+)
+select *
+from PersonalIdentifierInformationCTE where Identifier is not null
+and Identifier=@ssn
+end
+```
+
+```
+DBCC execution completed. If DBCC printed error messages, contact your system administrator.
+DBCC execution completed. If DBCC printed error messages, contact your system administrator.
+SQL Server Execution Times:
+CPU time = 0 ms, elapsed time = 0 ms.
+(8 row(s) affected)
+Table 'PersonalIdentifierInformation'. Scan count 1, logical reads 4413,
+physical reads 3, read-ahead reads 4406, lob logical reads 0,
+lob physical reads 0, lob read-ahead reads 0.
+(1 row(s) affected)
+SQL Server Execution Times:
+CPU time = 250 ms, elapsed time = 302 ms.
+SQL Server parse and compile time:
+CPU time = 0 ms, elapsed time = 0 ms.
+SQL Server Execution Times:
+CPU time = 0 ms, elapsed time = 0 ms.
+```
+
+![](030817_1532_improveperf1.png)
