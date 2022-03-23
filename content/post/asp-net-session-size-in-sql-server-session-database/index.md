@@ -7,12 +7,14 @@ tags:
   - ASP.Net
   - SQL-Server
   - Performance-Optimization
+  - T-SQL
 categories:
   - ASP.Net
   - SQL-Server
   - Performance-Optimization
+  - T-SQL
 image:
-  filename: featured
+  filename: ""
   focal_point: Smart
   preview_only: false
 ---
