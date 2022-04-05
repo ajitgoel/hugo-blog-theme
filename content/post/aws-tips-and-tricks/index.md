@@ -67,4 +67,4 @@ d. You need to schedule jobs(ECS provides a service scheduler), along with the a
 **AWS Lambda** is used for serverless function deployment. It should be used when \
 a. You have a application that runs in 15 minutes or less. 
 b. You don’t care or need advanced EC2 instance configuration. Lambda manages, provisions, and secures EC2 instances for you, along with providing target groups, load balancing, and auto-scaling. 
-c. You want to pay only for  the milliseconds the code has run and the number of times your code is triggered.  |
+c. You want to pay only for  the milliseconds the code has run and the number of times your code is triggered.
