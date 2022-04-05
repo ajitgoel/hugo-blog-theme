@@ -56,14 +56,15 @@ g.1. define the VPC, the subnets, as well as security groups for the Lambda func
 g.2. add network interfaces to the lambda function so it can access resources with the VPC\
 **Cons:** Placing a Lambda function in a VPC increases complexity, especially when scaling to a large number of concurrent executions. For example, the number of available private IP addresses in a VPC is limited, but a Lambda function will need multiple private IP addresses to be able to scale the number of concurrent invocations.
 
-| AWS ECS(Elastic container service)                                                                                                                                                                                                                                                                                                                                                                                          | AWS Lambda                                                                                                                                                                                                                                                                                                                                                                                             |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Used for container orchestration                                                                                                                                                                                                                                                                                                                                                                                            | Used for serverless function deployment                                                                                                                                                                                                                                                                                                                                                                |
-| should be used when \
+**AWS ECS versus AWS Lambda:**\
+\
+**AWS ECS** is used for container orchestration. It should be used when \
 a. you are running docker containers as ECS has better support for docker containers compared to AWS lambda\
 b. You want flexibility to run in a managed EC2 environment or in a serverless environment(AWS Fargate). 
 c. You have tasks or batch jobs running longer than 15 minutes. 
-d. You need to schedule jobs(ECS provides a service scheduler), along with the ability to run tasks manually. | should be used when \
+d. You need to schedule jobs(ECS provides a service scheduler), along with the ability to run tasks manually. 
+
+**AWS Lambda** is used for serverless function deployment. It should be used when \
 a. You have a application that runs in 15 minutes or less. 
 b. You don’t care or need advanced EC2 instance configuration. Lambda manages, provisions, and secures EC2 instances for you, along with providing target groups, load balancing, and auto-scaling. 
 c. You want to pay only for  the milliseconds the code has run and the number of times your code is triggered.  |
