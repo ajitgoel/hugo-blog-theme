@@ -1,5 +1,5 @@
 ---
-title: "AWS : Tips and Tricks"
+title: "AWS : Notes, Tips and Tricks"
 date: 2022-03-13T17:57:50.856Z
 summary: ""
 draft: false
@@ -55,3 +55,8 @@ g. To access endpoints within a private network(VPC), we must:\
 g.1. define the VPC, the subnets, as well as security groups for the Lambda function\
 g.2. add network interfaces to the lambda function so it can access resources with the VPC\
 **Cons:** Placing a Lambda function in a VPC increases complexity, especially when scaling to a large number of concurrent executions. For example, the number of available private IP addresses in a VPC is limited, but a Lambda function will need multiple private IP addresses to be able to scale the number of concurrent invocations.
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
