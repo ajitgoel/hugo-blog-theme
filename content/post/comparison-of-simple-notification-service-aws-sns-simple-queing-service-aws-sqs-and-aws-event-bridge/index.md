@@ -6,6 +6,11 @@ draft: false
 featured: false
 tags:
   - AWS
+  - EventBridge
+  - SNS
+  - SQS
+categories:
+  - AWS
 image:
   filename: ""
   focal_point: Smart
@@ -24,3 +29,9 @@ SNS, SQS, and EventBridge are all messaging services that can be used to exchang
 * SNS and SQS are both managed services that are fully managed by AWS. EventBridge is also a managed service, but it provides more flexibility and customization options than SNS and SQS, such as the ability to filter and route events based on specific criteria.
 
 Overall, the choice between SNS, SQS, and EventBridge depends on the specific requirements of your application and the type of messaging pattern you need. If you need a simple publish/subscribe messaging service, SNS may be the best choice. If you need a message queue service for decoupling and scaling microservices, SQS may be the best choice. If you need a flexible and customizable event-driven architecture, EventBridge may be the best choice.
+
+**Pricing Comparison:**
+
+* SNS pricing is based on the number of messages you send and the number of subscribers you have. You can choose between standard and FIFO (first-in, first-out) delivery for your messages, with different pricing for each option. Standard delivery is generally cheaper, but FIFO delivery guarantees message order and deduplication. There are also additional charges for SMS messages and additional data transfer. 
+* SQS pricing is based on the number of requests you make and the number of messages you send and receive. There are two types of queues available: standard queues and FIFO queues. Standard queues offer lower prices but do not guarantee message order or deduplication, while FIFO queues offer higher prices but guarantee message order and deduplication. 
+* EventBridge pricing is based on the number of events you send and the number of rules you create to filter and route those events. There are no additional charges for data transfer or for using EventBridge with other AWS services.
