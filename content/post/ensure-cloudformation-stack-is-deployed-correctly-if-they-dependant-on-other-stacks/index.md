@@ -1,5 +1,5 @@
 ---
-title: Ensure Cloudformation stack is deployed correctly if they dependant on
+title: Ensure Cloudformation stack is deployed correctly if they dependent on
   other stacks.
 date: 2023-01-29T18:46:23.178Z
 draft: false
@@ -13,7 +13,7 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-We had an issue recently where a particular CloudFormation stack(ParentStack below) was not getting deployed. This stack depended on resources in another stack(`ChildStack `below). On further investigation, we found that since the `ChildStack `was deployed first(since it was added last to the `IBaseStack `array) and it had errors deploying, the `ParentStack `would not deploy. 
+We had an issue recently where a particular CloudFormation stack(ParentStack below) was not getting deployed. This stack depended on resources in another stack(`ChildStack`below). On further investigation, we found that since the `ChildStack`was deployed first(since it was added last to the `IBaseStack`array) and it had errors deploying, the `ParentStack`would not deploy. 
 
 `let stacks: IBaseStack[] = [];`\
 `stacks.push(new ParentStack(app, 'ParentStack', deploymentProps));
@@ -28,4 +28,4 @@ const childStack= new ChildStack(app,'ChildStack', deploymentProps);`\
 `childStack.addDependency(parentStack);
 stacks.push(childStack);`
 
-Reference:` `https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib-readme.html#construct-dependencies
+Reference:https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib-readme.html#construct-dependencies
